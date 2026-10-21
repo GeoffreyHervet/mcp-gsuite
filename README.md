@@ -3,6 +3,14 @@
 [![smithery badge](https://smithery.ai/badge/mcp-gsuite)](https://smithery.ai/server/mcp-gsuite)
 MCP server to interact with Google products.
 
+> **Fork note:** this fork of [MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite) adds read-only Google Drive tools (`search_drive_files`, `get_drive_file`). The Smithery and PyPI packages are upstream and don't include them; install this fork from Git instead:
+>
+> ```bash
+> uvx --from git+https://github.com/GeoffreyHervet/mcp-gsuite mcp-gsuite --gauth-file /path/to/.gauth.json --accounts-file /path/to/.accounts.json --credentials-dir /path/to/credentials
+> ```
+>
+> Existing users need to enable the Google Drive API in their Cloud project and re-run the OAuth consent (delete `.oauth2.<email>.json`), since the `drive.readonly` scope was added.
+
 ## Example prompts
 
 Right now, this MCP server supports Gmail, Calendar and Drive integration with the following capabilities:
