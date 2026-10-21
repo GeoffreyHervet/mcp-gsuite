@@ -5,7 +5,7 @@ MCP server to interact with Google products.
 
 ## Example prompts
 
-Right now, this MCP server supports Gmail and Calendar integration with the following capabilities:
+Right now, this MCP server supports Gmail, Calendar and Drive integration with the following capabilities:
 
 1. General
 * Multiple google accounts
@@ -30,6 +30,11 @@ Right now, this MCP server supports Gmail and Calendar integration with the foll
   + Custom timezone support
   + Notification preferences
 * Delete calendar events
+
+4. Drive (read-only)
+* Search files in My Drive and shared drives (Drive query syntax)
+* Read Google Docs, Sheets and Slides as text/CSV, and textual files
+* Download binary files (PDF, images, Office files) to disk
 
 Example prompts you can try:
 
@@ -63,7 +68,7 @@ Google Workspace (G Suite) APIs require OAuth2 authorization. Follow these steps
 1. Create OAuth2 Credentials:
    - Go to the [Google Cloud Console](https://console.cloud.google.com/)
    - Create a new project or select an existing one
-   - Enable the Gmail API and Google Calendar API for your project
+   - Enable the Gmail API, Google Calendar API and Google Drive API for your project
    - Go to "Credentials" → "Create Credentials" → "OAuth client ID"
    - Select "Desktop app" or "Web application" as the application type
    - Configure the OAuth consent screen with required information
@@ -77,6 +82,7 @@ Google Workspace (G Suite) APIs require OAuth2 authorization. Follow these steps
      "openid",
      "https://mail.google.com/",
      "https://www.googleapis.com/auth/calendar",
+     "https://www.googleapis.com/auth/drive.readonly",
      "https://www.googleapis.com/auth/userinfo.email"
    ]
 ```

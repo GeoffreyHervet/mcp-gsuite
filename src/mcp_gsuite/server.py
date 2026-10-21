@@ -55,6 +55,7 @@ load_dotenv()
 
 from . import tools_gmail
 from . import tools_calendar
+from . import tools_drive
 from . import toolhandler
 
 
@@ -125,6 +126,9 @@ add_tool_handler(tools_calendar.ListCalendarsToolHandler())
 add_tool_handler(tools_calendar.GetCalendarEventsToolHandler())
 add_tool_handler(tools_calendar.CreateCalendarEventToolHandler())
 add_tool_handler(tools_calendar.DeleteCalendarEventToolHandler())
+
+add_tool_handler(tools_drive.SearchDriveFilesToolHandler())
+add_tool_handler(tools_drive.GetDriveFileToolHandler())
 
 @app.list_tools()
 async def list_tools() -> list[Tool]:
